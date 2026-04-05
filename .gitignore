@@ -4,6 +4,10 @@ node_modules
 
 capcut-env
 
+final/overlay_text_on_video_backup.py
+final/overlay_text_final.py
+final\extract_beat_timestamps.py
+final\overlay_text_on_video_backup.py
 # Ignore Apple macOS Desktop Services Store
 .DS_Store
 
