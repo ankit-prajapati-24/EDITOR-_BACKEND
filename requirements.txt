@@ -3,7 +3,6 @@ uvicorn
 moviepy
 pillow
 pycairo
-PyGObject
 openai-whisper
 requests
 python-dotenv
