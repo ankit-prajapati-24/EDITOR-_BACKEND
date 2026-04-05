@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+moviepy
+pillow
+pycairo
+PyGObject
+openai-whisper
+requests
+python-dotenv
+python-socketio
