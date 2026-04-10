@@ -17,7 +17,7 @@ import asyncio
 from final.generate_video_final import create_video_from_image_and_audio
 
 # Socket.IO server
-sio = socketio.AsyncServer(async_mode='asgi', cors_allowed_origins='*')
+sio = socketio.AsyncServer(async_mode='asgi', cors_allowed_origins=["*"])
 fastapi_app = FastAPI()
 
 # Wrap FastAPI with Socket.IO
@@ -325,6 +325,12 @@ async def generate_video_upload(
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-# For uvicorn to run the Socket.IO wrapped app
-app = socket_app
+# For uvicorn to run the Socket.IO wrapped app with CORS enabled for socket polling
+app = CORSMiddleware(
+    socket_app,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
